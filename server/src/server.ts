@@ -5,7 +5,6 @@ import { SocketEvent, SocketId } from "./types/socket"
 import { USER_CONNECTION_STATUS, User } from "./types/user"
 import { Server } from "socket.io"
 import path from "path"
-import { serverCheck } from 'poll-server-check';
 
 const app = express()
 
@@ -265,7 +264,9 @@ app.get("/", (req: Request, res: Response) => {
 	res.sendFile(path.join(__dirname, "..", "public", "index.html"))
 })
 
-serverCheck(app);
+app.post("/check", async (req, res) => {
+    res.status(200).json({ msg: "Server is running" });
+});
 
 server.listen(PORT, () => {
 	console.log(`Listening on port ${PORT}`)
