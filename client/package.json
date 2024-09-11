@@ -21,7 +21,7 @@
         "file-saver": "^2.0.5",
         "jszip": "^3.10.1",
         "lang-map": "^0.4.0",
-        "poll-server-check": "^1.1.0",
+        "poll-server-check": "^1.1.1",
         "react": "^18.2.0",
         "react-avatar": "^5.0.3",
         "react-dom": "^18.2.0",
