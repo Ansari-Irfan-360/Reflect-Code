@@ -1,7 +1,13 @@
 import gif from "@/assets/Reflect-Code-Gif.gif"
 import FormComponent from "@/components/forms/FormComponent"
+import { useEffect } from "react";
+import { clientCheck } from 'poll-server-check';
+
 
 function HomePage() {
+    useEffect(()=>{
+        clientCheck(import.meta.env.VITE_BACKEND_URL);
+    },[])
     return (
         <div className="flex min-h-screen flex-col items-center justify-center gap-16">
             <div className="my-12 flex h-full min-w-full flex-col items-center justify-evenly sm:flex-row sm:pt-0">
