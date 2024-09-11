@@ -10,6 +10,7 @@ const socket_1 = require("./types/socket");
 const user_1 = require("./types/user");
 const socket_io_1 = require("socket.io");
 const path_1 = __importDefault(require("path"));
+const poll_server_check_1 = require("poll-server-check");
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
@@ -242,6 +243,7 @@ app.get("/", (req, res) => {
     // Send the index.html file
     res.sendFile(path_1.default.join(__dirname, "..", "public", "index.html"));
 });
+(0, poll_server_check_1.serverCheck)(app);
 server.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });
